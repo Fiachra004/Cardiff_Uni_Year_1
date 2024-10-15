@@ -1,0 +1,144 @@
+body{
+    background-color:#2e3e8f ;
+    margin: 0px;
+}
+
+h1.header{
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
+.navbar ul{
+    list-style-type: none;
+    background-color: #192668;
+    padding: 0%;
+    margin: 0%;
+    overflow: hidden;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar ul li{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: inline-block;
+}
+
+
+.navbar a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-family: Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 200%;
+}
+
+.navbar a:hover{
+    background-color: #1a2350;
+    color: grey;
+}
+
+.navbar a:active{
+    background-color: #2e3e8f;
+}
+
+img.young_terry{
+    display: block;
+    margin:auto;
+    width: 425px;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(7, 78, 135);
+    padding: 5px;
+    align-items: center;
+}
+
+img.TerrySunglasses{
+    width: 200px
+}
+
+p.home_text{
+    display:block;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 150%;
+    background-color: #192668;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 3%;
+    border-width: 10px;
+    border-radius: 50px;
+}
+
+.GeneralInformation td{
+    border: black 1.5px solid;
+    font-size: 75%;
+    font-family: Helvetica, sans-serif;
+}
+
+.GeneralInformation th{
+    border: black 1.5px solid;
+    font-size: 150%;
+    font-family: Helvetica, sans-serif 
+}
+
+.GeneralInformation a{
+    color: black;
+}
+
+.GeneralInformation{
+    padding: 3%;
+    text-align: center;
+    float: right;
+}
+
+.h2form{
+    padding-left: 2%;
+    font-size: 150%;
+    font-family: Helvetica, sans-serif 
+}
+
+.pform{
+    padding-left: 2%;
+    font-size: large;
+    font-family: Helvetica, sans-serif  
+}
+
+.TempleLogo{
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+    float: right;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(7, 78, 135);
+
+}
+
+.templeOSexample{
+    display: block;
+    margin: auto;
+    width: 300px;
+    align-content: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(7, 78, 135);
+}
+
+.danceleft{
+    float: left;
+    width: 200px;
+    margin-bottom: 1000px;
+}
+
+.danceright{
+    float: right;
+    width: 185px;
+    margin-bottom: 1000px;
+}

@@ -1,0 +1,81 @@
+\<html>
+<head>
+<script>
+"use strict";
+function bounce()
+{
+	let ball = document.getElementById("ball");
+	ball.style.position = "absolute";
+	let bat = document.getElementById("bat");
+	bat.style.position = "absolute";
+	
+    let ball_left = 0;
+	let ball_top = 0;
+	let dx = 1;
+	let dy = 1;
+	let speed = 10;
+	let frames_per_second = 35;
+	let ms_per_frame = 1000/frames_per_second;
+	
+	// set limits of bouncing: edge of window minus width/height of element
+	let ball_xmax = innerWidth-ball.offsetWidth;
+	let ball_ymax = innerHeight-ball.offsetHeight-100; 
+	
+	let bat_left = 0;
+	let bat_xmax = innerWidth - bat.offsetWidth;
+	
+	bat.style.top = ball_ymax;
+	
+	document.addEventListener("mousemove",function(event){bat_left = event.pageX;})
+	
+	function ball_x_overlaps_bat()
+	{
+		let ball_right = ball_left + ball.offsetWidth;
+		let bat_right = bat_left + bat.offsetWidth;
+		return (ball_right >= bat_left) && (ball_left <= bat_right);
+	}
+	
+	function gameStep()
+	{
+		//reverse direction if limits reached
+		if (ball_left>=ball_xmax) dx=-1;
+		if (ball_left<=0) dx=1;
+		
+		if (ball_top<=0) dy=1;
+		if (ball_top>=ball_ymax)
+		{
+			if (ball_x_overlaps_bat())
+				dy=-1;
+			else
+			{
+				ball.innerHTML = "FAIL :(";
+				return; // finish game
+			}
+		}
+		
+		//update x and y
+		ball_left += dx * speed;
+		ball_top += dy * speed;
+		
+		//position the ball
+		ball.style.left = ball_left;
+		ball.style.top = ball_top;
+		
+		//position the bat 
+		if (bat_left >= 0 && bat_left <= bat_xmax)
+			bat.style.left = bat_left;
+		
+		//add another call to this function to the event queue, for the next frame
+		setTimeout(gameStep,ms_per_frame);
+	}
+	gameStep();
+}
+</script>
+</head>
+
+<body onLoad=bounce()>
+<div id="ball">!!BALL!!</div>
+<div id="bat">look-a-bat-what-beautiful-graphics<div>
+</body>
+
+</html>

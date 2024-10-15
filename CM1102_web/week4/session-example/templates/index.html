@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Basket</title>
+</head>
+<body>
+    <h1>Shopping Basket</h1>
+    <form method="POST">
+        <label for="item">Item:</label>
+        <input type="text" id="id" name="id" required>
+        <input type="number" id="item" name="item" required>
+        <button type="submit">Add to Basket</button>
+    </form>
+    <h2>Basket Contents:</h2>
+    <ul>
+        {% for item in basket %}
+            <li>{{ item }}</li>
+            <li>{{ basket[item] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

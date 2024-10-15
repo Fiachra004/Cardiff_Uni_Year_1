@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Compute Easter</title>
+  </head>
+
+  <body>
+    <h1>Calculate Easter Sunday !</h1>
+    <form action="cgi-bin/EasterTime_v7.py" method="POST">
+      <div class="textbox">
+        Enter year: <input type="number" name="Year" id="Year" min="1" />
+        <br />
+      </div>
+
+      <div class="Radio">
+        <input type="radio" name="outputType" value="Verbose" checked />
+        Verbose <br / ><input
+          type="radio"
+          name="outputType"
+          value="Numerical"
+        />
+        Numerical <br / ><input
+          type="radio"
+          name="outputType"
+          value="Combination"
+        />
+        Both <br /
+      </div>
+
+      <div class="Submit">
+        <input type="Submit" value="Calculate Date" />
+      </div>
+    </form>
+  </body>
+</html>

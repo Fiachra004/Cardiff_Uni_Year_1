@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(56, 56, 150);
+}
+
+h1, h2 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: solid 1px #000000
+}
+
+.Radio{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    align-items: center;
+}
+
+.Submit {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.textbox {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+a {
+    color: black;
+    padding: 30px;
+}
+
+img {
+    display: block;
+    margin:auto;
+    width: 425px;
+    padding: 40px;
+    align-items: center;
+}

@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Javascript Demo</title>
+
+<script>
+function complain_about_mouse_on_head()
+{
+    let newnode = document.createElement("p");
+    newnode.innerHTML="Oh noes! A mouse on my heading!";
+    document.getElementById("my_div").appendChild(newnode);
+}
+function express_relief()
+{
+    let newnode = document.createElement("p");
+    newnode.innerHTML="Phew, it's gone.";
+    document.getElementById("my_div").appendChild(newnode);
+}
+function change_color(color)
+{
+    document.getElementById("my_div").style.color=color;
+}
+</script>
+
+</head>
+
+<body>
+<h1 onMouseOver=complain_about_mouse_on_head() onMouseOut=express_relief()>Hello World</h1>
+<div id="my_div">
+<p>Here I am, relaxing.</p>
+</div>
+<p>And that's all there is to it.</p>
+
+<button onclick=change_color("red")>Make it red!</button>
+<button onclick=change_color("green")>Make it green!</button>
+
+</body>
+
+</html>

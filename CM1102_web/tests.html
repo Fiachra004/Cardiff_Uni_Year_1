@@ -1,0 +1,111 @@
+<html>
+<head>
+<script>
+
+function format_with_type(x)
+{
+    if (x==="")
+        return '"" <i>(empty string)</i>';
+    if (typeof(x)=="string")
+        return '"'+x+'" <i>(string)</i>';
+    return x+" <i>("+typeof(x)+")</i>";
+}
+
+function format(x)
+{
+    if (typeof(x)=="string")
+        return '"'+x+'"';
+    return x;
+}
+
+function make_equality_test_button(x,y,strict)
+{
+    let p = document.createElement("p");
+    
+    function show_answer()
+    {
+        if (strict)
+        {
+            if (x===y)
+                p.innerHTML+=" YES!";
+            else
+                p.innerHTML+=" NO!";
+        }
+        else
+        {
+            if (x==y)
+                p.innerHTML+=" YES!";
+            else
+                p.innerHTML+=" NO!";
+        }
+    }
+    
+    let format_equals = strict?"===":"==";
+    
+    let button = document.createElement("button");
+    button.addEventListener("click",show_answer);
+    button.innerHTML="Test whether "+format_with_type(x)+" "+format_equals+" "+format_with_type(y);
+    
+    p.appendChild(button);
+    document.getElementById("buttons").appendChild(p);
+}
+
+function make_truthyness_test_button(x)
+{
+    let p = document.createElement("p");
+    
+    function show_answer()
+    {
+        if (x)
+            p.innerHTML+=" YES, "+format_with_type(x)+" is truthy!";
+        else
+            p.innerHTML+=" NO, "+format_with_type(x)+" is falsey!";
+    }
+    
+    let button = document.createElement("button");
+    button.addEventListener("click",show_answer);
+    button.innerHTML="Does <pre>if("+format(x)+") {stuff}</pre> do stuff?";
+    
+    p.appendChild(button);
+    document.getElementById("buttons").appendChild(p);
+}
+
+function make_buttons()
+{
+    make_equality_test_button(2,2,false);
+    make_equality_test_button(2,3,false);
+    make_equality_test_button(2,"2",false);
+    make_equality_test_button(2,"2.0",false);
+    make_equality_test_button("2","2.0",false);
+    make_equality_test_button(2,"2",true);
+    make_equality_test_button(0,false,false);
+    make_equality_test_button(1,true,false);
+    
+    make_equality_test_button(2,false,false);
+    make_equality_test_button(2,true,false);
+    make_truthyness_test_button(2);
+    
+    make_equality_test_button("0",false,false);
+    make_equality_test_button("",false,false);
+    make_equality_test_button("nevergonnagiveyouup",false,false);
+    make_equality_test_button("nevergonnagiveyouup",true,false);
+    make_truthyness_test_button("nevergonnagiveyouup");
+    
+    make_equality_test_button("true",true,false);
+    make_equality_test_button("false",true,false);
+    make_truthyness_test_button("false");
+    
+    make_equality_test_button(undefined,false,false);
+    make_equality_test_button(undefined,true,false);
+    make_truthyness_test_button(undefined);
+    
+    make_equality_test_button(null,false,false);
+    make_equality_test_button(null,true,false);
+    make_truthyness_test_button(null);
+}
+
+</script>
+</head>
+<body onload=make_buttons()>
+<div id="buttons"></div>
+</html>

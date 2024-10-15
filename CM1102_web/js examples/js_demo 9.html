@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Javascript Demo</title>
+
+<script>
+function complain_about_mouse_on_head()
+{
+    document.getElementById("my_paragraph").innerHTML="Oh noes! A mouse on my heading!";
+}
+function express_relief()
+{
+    document.getElementById("my_paragraph").innerHTML="Phew! It's gone.";
+}
+</script>
+
+</head>
+
+<body>
+<h1 onMouseOver=complain_about_mouse_on_head() onMouseOut=express_relief()>Hello World</h1>
+<p id="my_paragraph">Here I am, relaxing.</p>
+</body>
+
+</html>
